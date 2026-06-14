@@ -9,3 +9,5 @@
 5. give me some ideas for creating footer section.
 
 6. how to create the copyright icon in html.
+
+7. syntax for creating variable in css;
