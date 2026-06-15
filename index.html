@@ -3,201 +3,414 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,229;1,229&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Digital Experience Landing Page</title>
     <script src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
   </head>
-  <body>
-    <div class="header">
-      <nav class="navbar">
-        <div class="imageContainer">
+  <body
+    class="bg-[#f6f8fb] font-['Roboto',sans-serif] text-[#18212f] transition-colors duration-300 [&.darkTheme]:bg-[#101722] [&.darkTheme]:text-[#eef4ff]"
+  >
+    <header
+      class="sticky top-0 z-20 rounded-b-[18px] bg-[#e2f5f3]/20 py-2.5 transition-colors duration-300 [body.darkTheme_&]:bg-[#172331]/20 backdrop-blur-lg"
+    >
+      <nav
+        class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-1 md:px-12"
+      >
+        <a
+          class="block h-12 w-12 overflow-hidden rounded-[10px]"
+          href="#"
+          aria-label="Prodesk IT home"
+        >
           <img
-            class="image"
+            class="h-full w-full object-cover"
             src="./assest/logo.png"
-            alt="Error in loading logo"
+            alt="Prodesk IT logo"
           />
-        </div>
-        <div class="navActions">
-          <!-- for toggle meny btn -->
-          <button class="menuToggle" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
+        </a>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="menuToggle flex h-11 w-11 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-lg border border-[#cbd5e1] bg-transparent min-[821px]:hidden [body.darkTheme_&]:border-[#334155]"
+            type="button"
+          >
+            <span
+              class="h-0.5 w-5 rounded-full bg-[#18212f] transition-all duration-200 [body.darkTheme_&]:bg-[#eef4ff]"
+            ></span>
+            <span
+              class="h-0.5 w-5 rounded-full bg-[#18212f] transition-all duration-200 [body.darkTheme_&]:bg-[#eef4ff]"
+            ></span>
+            <span
+              class="h-0.5 w-5 rounded-full bg-[#18212f] transition-all duration-200 [body.darkTheme_&]:bg-[#eef4ff]"
+            ></span>
           </button>
-          <ul class="navbarLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Contact</a></li>
-            <li>
-              <button class="themeToggle" type="button" aria-label="Switch to dark mode">
-                <span class="themeKnob"></span>
-              </button>
-            </li>
-          </ul>
+
+          <!-- Added w-full position isolation to make sure mobile backdrop rendering engine triggers correctly -->
+          <div class="absolute left-0 right-0 top-0 min-[821px]:static">
+            <ul
+              class="navbarLinks absolute left-4 right-4 top-[60px] z-30 hidden flex-col items-start gap-4 rounded-2xl bg-[#e2f5f3]/70 px-12 py-6 shadow-[0_12px_30px_rgba(23,33,43,0.15)] [&.showMenu]:flex min-[821px]:static min-[821px]:flex min-[821px]:flex-row min-[821px]:items-center min-[821px]:gap-0 min-[821px]:bg-transparent min-[821px]:p-0 min-[821px]:shadow-none [body.darkTheme_&]:bg-[#172331]/75 min-[821px]:[body.darkTheme_&]:bg-transparent backdrop-blur-xl min-[821px]:backdrop-blur-none"
+            >
+              <li>
+                <a
+                  class="mr-8 text-[1.2em] font-extrabold text-[#18212f] no-underline transition-colors duration-300 hover:text-[#14b8a6] [body.darkTheme_&]:text-[#eef4ff] [body.darkTheme_&]:hover:text-[#14b8a6]"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="mr-8 text-[1.2em] font-extrabold text-[#18212f] no-underline transition-colors duration-300 hover:text-[#14b8a6] [body.darkTheme_&]:text-[#eef4ff] [body.darkTheme_&]:hover:text-[#14b8a6]"
+                  href="#"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="mr-8 text-[1.2em] font-extrabold text-[#18212f] no-underline transition-colors duration-300 hover:text-[#14b8a6] [body.darkTheme_&]:text-[#eef4ff] [body.darkTheme_&]:hover:text-[#14b8a6]"
+                  href="#"
+                  >Service</a
+                >
+              </li>
+              <li>
+                <a
+                  class="mr-8 text-[1.2em] font-extrabold text-[#18212f] no-underline transition-colors duration-300 hover:text-[#14b8a6] [body.darkTheme_&]:text-[#eef4ff] [body.darkTheme_&]:hover:text-[#14b8a6]"
+                  href="#"
+                  >Contact</a
+                >
+              </li>
+              <li class="mt-2 min-[821px]:mt-0">
+                <button
+                  class="themeToggle flex h-[30px] w-[54px] cursor-pointer items-center rounded-full border border-[#cbd5e1] bg-[#edf2f7] p-[3px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 [body.darkTheme_&]:border-[#334155] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+                  type="button"
+                  aria-label="Switch to dark mode"
+                >
+                  <span
+                    class="themeKnob block h-[22px] w-[22px] rounded-full bg-[#2563eb] transition-all duration-300 [body.darkTheme_&]:translate-x-6 [body.darkTheme_&]:bg-[#fbbf24]"
+                  ></span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-    </div>
+    </header>
+
     <main>
-      <div class="bgImage">
-        <div class="mainContent">
-          <div class="heading">Creative digital solutions</div>
-          <div class="mainHeading">We build Digital experience</div>
-          <div class="subtitle">
+      <section
+        class="flex min-h-[calc(100vh-72px)] items-center overflow-hidden rounded-t-[18px] bg-[linear-gradient(rgba(8,19,32,0.58),rgba(8,19,32,0.58)),url('./assest/hero-bg.jpg')] bg-cover bg-center px-5 py-20 text-white max-[600px]:min-h-[80vh] max-[600px]:items-start md:px-12"
+      >
+        <div class="w-full max-w-7xl md:mx-auto md:ml-16">
+          <p
+            class="mb-4 font-serif text-[1.3rem] font-bold text-[#c7d2fe] [body.darkTheme_&]:text-[#bae6fd] min-[601px]:ml-8 min-[601px]:text-2xl lg:text-3xl"
+          >
+            Creative digital solutions
+          </p>
+          <h1
+            class="mt-6 max-w-full text-[2.7rem] font-black leading-[1.08] text-[#fff3a3] [body.darkTheme_&]:text-[#fde68a] min-[601px]:mt-12 min-[601px]:max-w-[80%] min-[601px]:text-6xl lg:max-w-[60%] lg:text-7xl"
+          >
+            We build Digital experience
+          </h1>
+          <p
+            class="mt-6 max-w-full text-base font-medium leading-relaxed text-[#ddf7e8] [body.darkTheme_&]:text-[#cffafe] min-[601px]:ml-8 min-[601px]:mt-12 min-[601px]:max-w-[80%] min-[601px]:text-xl lg:max-w-[60%]"
+          >
             We help brands grow with clean websites, smart campaigns, and
             search-ready strategies built for modern customers.
-          </div>
-          <button class="StartedBtn">Get Started</button>
+          </p>
+          <button
+            class="mt-8 w-full cursor-pointer rounded-lg border-0 bg-gradient-to-r from-[#2563eb] to-[#14b8a6] px-4 py-3 text-lg font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_5px_18px_rgba(102,112,133,0.85)] min-[601px]:mt-12 min-[601px]:w-auto min-[601px]:px-20 [body.darkTheme_&]:from-[#0ea5e9] [body.darkTheme_&]:to-[#f59e0b]"
+          >
+            Get Started
+          </button>
         </div>
-      </div>
+      </section>
     </main>
-    <section class="cards">
-      <div class="cardHeading">
-        <p class="title1">What we do :-</p>
-        <h2 class="title2">Services we provide</h2>
+
+    <section class="mb-12 w-full">
+      <div>
+        <p
+          class="mx-5 mt-12 mb-3 font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif] text-3xl font-medium text-[#d97706] [body.darkTheme_&]:text-[#fbbf24] min-[601px]:ml-24 min-[601px]:mt-16 min-[601px]:text-5xl"
+        >
+          What we do :-
+        </p>
+        <h2
+          class="mx-5 font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif] text-3xl font-medium text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:ml-36 min-[601px]:text-5xl"
+        >
+          Services we provide
+        </h2>
       </div>
-      <div class="serviceContainer">
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
+
+      <div
+        class="mx-5 mt-8 grid grid-cols-1 gap-6 md:mx-8 md:mt-12 md:grid-cols-2 lg:mx-12 lg:grid-cols-3"
+      >
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="SEO icon"
+            >
               <path
                 d="M10.8 18.6a7.8 7.8 0 1 1 5.5-2.3l4.4 4.4-1.7 1.7-4.4-4.4a7.8 7.8 0 0 1-3.8.6Zm0-2.4a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0 0 10.8Z"
               />
             </svg>
           </div>
-          <h3 class="serviceName">SEO</h3>
-          <p class="desc">
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            SEO
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
             Improve visibility with technical audits, keyword planning, and
             content that helps customers find you.
           </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M3 4.5h18v13H3v-13Zm2.2 2.2v8.6h13.6V6.7H5.2ZM8 21v-2.2h8V21H8Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">Web Development</h3>
-          <p class="desc">
-           Create responsive, fast-loading websites that look polished and
-              work smoothly on every screen size.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M4 13.8V6.6l11.5-3.2v17.2L4 17.4v-3.6Zm2.2-5.5v7.4l7.1 2V6.3l-7.1 2Zm11 1.2H21v2.2h-3.8V9.5Zm0 4H21v2.2h-3.8v-2.2Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">Marketing</h3>
-          <p class="desc">
-            Plan focused campaigns that connect with your audience and turn
-              attention into meaningful action.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M4 4h16v3H4V4Zm0 5h7v11H4V9Zm9 0h7v4h-7V9Zm0 6h7v5h-7v-5Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">UI/UX Design</h3>
-          <p class="desc">
-            Design clear interfaces, smooth user journeys, and layouts that
-              make products easier to use.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M12 2 4 6v6c0 5.1 3.4 8.7 8 10 4.6-1.3 8-4.9 8-10V6l-8-4Zm0 2.5 5.8 2.9V12c0 3.8-2.3 6.5-5.8 7.7-3.5-1.2-5.8-3.9-5.8-7.7V7.4L12 4.5Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">Cyber Security</h3>
-          <p class="desc">
-            Protect websites and customer data with safer setup, monitoring,
-              and security best practices.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8.5L4 20.5V6a2 2 0 0 1 1-2Zm1.2 2.2v9.9l1.6-1.3H19V6.2H6.2Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">Social Media</h3>
-          <p class="desc">
-            Build a consistent online presence with post planning, creative
-              direction, and audience engagement.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M5 4h14v16H5V4Zm2.2 2.2v11.6h9.6V6.2H7.2Zm1.6 2h6.4v2H8.8v-2Zm0 3.2h6.4v2H8.8v-2Zm0 3.2h4v2h-4v-2Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">Content Writing</h3>
-          <p class="desc">
-            Create website copy, blogs, and campaign content that explains
-              your value in a simple way.
-          </p>
-        </div>
-        <div class="service">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                  d="M4 5h16v14H4V5Zm2.2 2.2v9.6h11.6V7.2H6.2Zm2 1.6h7.6v2H8.2v-2Zm0 3.2h4.8v2H8.2v-2Z"
-                />
-              </svg>
-          </div>
-          <h3 class="serviceName">E-commerce</h3>
-          <p class="desc">
-            Launch online stores with product pages, checkout flows, and
-              responsive shopping experiences.
-          </p>
-        </div>
-        
-    </section>
-    <footer class="footer">
-      <div>
-        <p class="footerText">
-            Building clean websites, digital campaigns, and reliable online
-            experiences for growing businesses.
-          </p>
-          <hr>
-          
-        <p class="footerBottom">&copy; 2026 Prodesk IT. All rights reserved.</p>
+        </article>
 
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Web Development icon"
+            >
+              <path
+                d="M3 4.5h18v13H3v-13Zm2.2 2.2v8.6h13.6V6.7H5.2ZM8 21v-2.2h8V21H8Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            Web Development
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Create responsive, fast-loading websites that look polished and work
+            smoothly on every screen size.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Marketing icon"
+            >
+              <path
+                d="M4 13.8V6.6l11.5-3.2v17.2L4 17.4v-3.6Zm2.2-5.5v7.4l7.1 2V6.3l-7.1 2Zm11 1.2H21v2.2h-3.8V9.5Zm0 4H21v2.2h-3.8v-2.2Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            Marketing
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Plan focused campaigns that connect with your audience and turn
+            attention into meaningful action.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="UI UX Design icon"
+            >
+              <path
+                d="M4 4h16v3H4V4Zm0 5h7v11H4V9Zm9 0h7v4h-7V9Zm0 6h7v5h-7v-5Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            UI/UX Design
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Design clear interfaces, smooth user journeys, and layouts that make
+            products easier to use.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Cyber Security icon"
+            >
+              <path
+                d="M12 2 4 6v6c0 5.1 3.4 8.7 8 10 4.6-1.3 8-4.9 8-10V6l-8-4Zm0 2.5 5.8 2.9V12c0 3.8-2.3 6.5-5.8 7.7-3.5-1.2-5.8-3.9-5.8-7.7V7.4L12 4.5Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            Cyber Security
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Protect websites and customer data with safer setup, monitoring, and
+            security best practices.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Social Media icon"
+            >
+              <path
+                d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8.5L4 20.5V6a2 2 0 0 1 1-2Zm1.2 2.2v9.9l1.6-1.3H19V6.2H6.2Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            Social Media
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Build a consistent online presence with post planning, creative
+            direction, and audience engagement.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Content Writing icon"
+            >
+              <path
+                d="M5 4h14v16H5V4Zm2.2 2.2v11.6h9.6V6.2H7.2Zm1.6 2h6.4v2H8.8v-2Zm0 3.2h6.4v2H8.8v-2Zm0 3.2h4v2h-4v-2Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            Content Writing
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Create website copy, blogs, and campaign content that explains your
+            value in a simple way.
+          </p>
+        </article>
+
+        <article
+          class="group w-full cursor-pointer rounded-[10px] bg-white shadow-[0_12px_20px_rgba(23,33,43,0.12)] transition-all duration-300 hover:-skew-x-[8deg] hover:bg-slate-100 hover:shadow-[0_8px_16px_rgba(100,134,127,0.9)] [body.darkTheme_&]:bg-[#1c2938] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)] [body.darkTheme_&]:hover:bg-[#816b33]"
+        >
+          <div
+            class="m-5 flex h-[45px] w-[45px] items-center justify-center overflow-hidden rounded-[5px] bg-[#edf2f7] p-[5px] shadow-[0_12px_20px_rgba(23,33,43,0.12)] [body.darkTheme_&]:bg-[#2b3a4b] [body.darkTheme_&]:shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
+          >
+            <svg
+              class="h-[35px] w-[35px] fill-[#2563eb] [body.darkTheme_&]:fill-[#7dd3fc]"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="E-commerce icon"
+            >
+              <path
+                d="M4 5h16v14H4V5Zm2.2 2.2v9.6h11.6V7.2H6.2Zm2 1.6h7.6v2H8.2v-2Zm0 3.2h4.8v2H8.2v-2Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="mx-5 text-[1.35rem] font-black text-[#2563eb] [body.darkTheme_&]:text-[#7dd3fc] min-[601px]:text-[1.6rem]"
+          >
+            E-commerce
+          </h3>
+          <p
+            class="m-5 text-base font-medium text-[#667085] [body.darkTheme_&]:text-[#c7d1df]"
+          >
+            Launch online stores with product pages, checkout flows, and
+            responsive shopping experiences.
+          </p>
+        </article>
       </div>
-      </div>
+    </section>
+
+    <footer
+      class="rounded-t-3xl bg-[#17212b] px-5 py-8 text-white transition-colors duration-300 [body.darkTheme_&]:bg-[#0b111a] [body.darkTheme_&]:text-[#eef4ff] md:px-8 md:py-12"
+    >
+      <p
+        class="mx-auto mb-6 max-w-4xl text-center text-base font-bold leading-normal md:text-2xl"
+      >
+        Building clean websites, digital campaigns, and reliable online
+        experiences for growing businesses.
+      </p>
+      <hr class="mx-4 border-white/30 md:mx-16" />
+      <p
+        class="my-8 text-center text-base font-light leading-normal md:text-2xl"
+      >
+        &copy; 2026 Prodesk IT. All rights reserved.
+      </p>
     </footer>
+
     <script src="script.js"></script>
     <script>
       const lenis = new Lenis({
         autoRaf: true,
       });
-      // lenis.on("scroll", (e) => {
-      //   console.log(e);
-      // });
     </script>
   </body>
 </html>

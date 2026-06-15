@@ -11,3 +11,5 @@
 6. how to create the copyright icon in html.
 
 7. syntax for creating variable in css;
+
+8. i want to change my webpage to tailwind css instead of normal style css tell me what approch should i use and how should i handle toggle dark mode in tailwind css ??
